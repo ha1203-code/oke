@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitoring Arus</title>
+    <!-- Link ke Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100">
+    <div class="container mx-auto p-4">
+        <h1 class="text-3xl font-bold text-center text-blue-600">Monitoring Arus</h1>
+        
+        <!-- Bagian untuk menampilkan data arus -->
+        <div class="bg-white shadow-md rounded-lg p-6 mt-6">
+            <h2 class="text-2xl font-semibold text-gray-800">Arus Terukur:</h2>
+            <p id="current-value" class="text-4xl font-bold text-green-500">0 A</p>
+        </div>
+
+        <!-- Tombol untuk melakukan refresh data -->
+        <div class="text-center mt-4">
+            <button onclick="getCurrentData()" class="bg-blue-500 text-white font-bold py-2 px-4 rounded hover:bg-blue-600">
+                Refresh Data
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Fungsi untuk mendapatkan data arus (contoh, bisa disambungkan ke API atau data real-time)
+        function getCurrentData() {
+            // Data arus simulasi (Anda bisa menggantinya dengan data dari sensor sebenarnya)
+            let simulatedCurrent = Math.random() * 100;
+            document.getElementById('current-value').innerText = simulatedCurrent.toFixed(2) + " A";
+        }
+
+        // Refresh data otomatis setiap 5 detik
+        setInterval(getCurrentData, 5000);
+    </script>
+</body>
+</html>
